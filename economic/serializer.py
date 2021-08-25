@@ -24,7 +24,7 @@ class EconomicSerializer(object):
         return "<%s: %s>" % (self.__class__.__name__, self.__str__())
 
     def __str__(self):
-        return self.__unicode__().encode('utf-8')
+        return self.__unicode__()
 
     def __unicode__(self):
         return u"%d" % getattr(self, self.id_property_name, None)
