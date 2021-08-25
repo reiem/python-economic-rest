@@ -2,6 +2,10 @@ import os
 from setuptools import setup
 from economic import version
 
+
+REQUIREMENTS = [i.strip() for i in open("requirements.txt").readlines() if not i.startswith('#')]
+
+
 setup(
     name = "python-economic-rest",
     version = version,
@@ -14,8 +18,7 @@ setup(
     packages=['economic'],
     classifiers=[
     ],
-    install_requires=[
-    ],
+    install_requires=REQUIREMENTS,
     include_package_data=True,
     zip_safe = False,
 )
